@@ -10,6 +10,7 @@ import Albums from "./pages/Albums";
 import { ToastContainer } from "react-toastify";
 import "../node_modules/react-toastify/dist/ReactToastify.min.css";
 import EditPost from "./pages/EditPost";
+export const url = "http://localhost:5000";
 
 const App = () => {
   return (

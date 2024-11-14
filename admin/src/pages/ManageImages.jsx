@@ -3,6 +3,7 @@ import { BlogContext } from "../contexts/BlogContext";
 
 const ManageImages = () => {
   const { images } = useContext(BlogContext);
+  console.log(images);
   return (
     <div className="px-5 sm:px-[5vw] md:px-[7vw] lg:px-[9vw] py-10">
       <h1 className="text-3xl font-semibold text-center pb-10">

@@ -29,7 +29,7 @@ export const removeImg = async (req, res) => {
   }
 };
 
-export const getImg = async (req, res) => {
+export const getImgByCategory = async (req, res) => {
   try {
     const { category } = req.params;
     const images = await Image.find({ category });
@@ -38,6 +38,22 @@ export const getImg = async (req, res) => {
       return res
         .status(404)
         .json({ success: false, message: "Images not found!" });
+    }
+
+    res.status(200).json({ success: true, images });
+  } catch (error) {
+    res.status(500).json({ success: false, message: error.message });
+  }
+};
+
+export const getImg = async (req, res) => {
+  try {
+    const images = await Image.find({});
+
+    if (!images) {
+      return res
+        .status(404)
+        .json({ success: false, message: "Images not found" });
     }
 
     res.status(200).json({ success: true, images });
